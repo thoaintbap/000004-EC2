@@ -1,11 +1,12 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const compression = require('compression');
+const logger = require('./server/logger');
 
 require('dotenv').config();
 const db = require('./server/db');
 
-db.authenticate().then(() => console.log('Database connected'));
+db.authenticate().then(() => logger.info('Database connected'));
 
 const app = express();
 const port = process.env.PORT || 5000;

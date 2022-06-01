@@ -10,6 +10,12 @@ const config = {
 const sequelize = new Sequelize(config.database, config.user, config.password, {
   host: config.host,
   dialect: 'mysql',
+  // pool: {
+  //   max: 100,
+  //   min: 0,
+  //   acquire: 30000,
+  //   idle: 10000,
+  // },
 });
 
 module.exports = sequelize;
